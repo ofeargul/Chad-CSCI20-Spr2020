@@ -8,15 +8,21 @@ import "fmt"
 
 func main() {
   //stating the variables
-  var tankSize int
-  var milesTravled int
+  var NumOne int
+  var NumTwo int
   //getting input for the variables
-  fmt.Println("How large is the gas tank?")
-  fmt.Scanln(&tankSize)
-  fmt.Println("How many miles travled?")
-  fmt.Scanln(&milesTravled)
-  // outputing MPG of trip
-  fmt.Println(milesTravled / tankSize)
+  fmt.Println("Please enter a whole number")
+  fmt.Scanln(&NumOne)
+  fmt.Println("Please enter another whole number")
+  fmt.Scanln(&NumTwo)
+  // doing math....
+  fmt.Println("Addition", NumOne + NumTwo )
+  fmt.Println("Subtraction", NumOne - NumTwo )
+  fmt.Println("Multiplication", NumOne * NumTwo )
+  fmt.Println("Divison", NumOne / NumTwo )
+  fmt.Println("remainder", NumOne % NumTwo )
+
+
 
 
 
