@@ -8,15 +8,15 @@ import "fmt"
 
 func main() {
   //stating the variables
-  var tankSize float32 
-  var milesTravled float32
+  var tankSize int
+  var milesTravled int
   //getting input for the variables
   fmt.Println("How large is the gas tank?")
   fmt.Scanln(&tankSize)
   fmt.Println("How many miles travled?")
   fmt.Scanln(&milesTravled)
   // outputing MPG of trip
-  fmt.Println(tankSize / milesTravled)
+  fmt.Println(milesTravled / tankSize)
 
 
 
