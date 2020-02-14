@@ -1,26 +1,51 @@
 // Programmer name: Chad Farrell
-// Date completed: 2.6.2020
-// Description: names and ages
+// Date completed: 2.13.2020
+// Description: This program does math to find the total cost for a yogurt shop.
 
 package main
 
 import "fmt" 
 
 func main() {
-  //stating the variables
-  var NumOne int
-  var NumTwo int
-  //getting input for the variables
-  fmt.Println("Please enter a whole number")
-  fmt.Scanln(&NumOne)
-  fmt.Println("Please enter another whole number")
-  fmt.Scanln(&NumTwo)
-  // doing math....
-  fmt.Println("Addition", NumOne + NumTwo )
-  fmt.Println("Subtraction", NumOne - NumTwo )
-  fmt.Println("Multiplication", NumOne * NumTwo )
-  fmt.Println("Divison", NumOne / NumTwo )
-  fmt.Println("remainder", NumOne % NumTwo )
+//Creating the variables
+  var Oz, coupon, tax, totalWithout, totalWith, tip, toppings2 float32
+  var toppings int
+  var couponQ int
+
+//asking the user for ounces of yogurt
+  fmt.Println("How many ounces?")
+  fmt.Scanln(&Oz)
+  totalWithout = (Oz) * .17
+  
+//getting the toppings prics
+  fmt.Println("how many toppings")
+  fmt.Scanln(&toppings)
+  toppings2 = float32(toppings) * .5
+
+//getting coupon info if any
+  fmt.Println("does the coustomer have a coupon? Enter 1 for yes and 2 for no")
+  fmt.Scanln(&couponQ)
+  if couponQ == 1 {
+    fmt.Println("please enter coupon amount in decimals")
+    fmt.Scanln(&coupon)
+    totalWith = (coupon * totalWithout)
+     }
+
+//adding total and topping + the weight of the cup
+  totalWith = totalWith + toppings2 + .00425
+
+//finding the tax  
+  tax = totalWith * .725
+
+//finding the tip amount
+  fmt.Println("Please enter tip amount")
+  fmt.Scanln(&tip)
+ 
+//final totals
+totalWith = (totalWith + tax) + tip
+
+fmt.Println("The price of just yogurt is",totalWithout)
+fmt.Println("The total price is", totalWith)
 
 
 
