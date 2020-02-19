@@ -1,57 +1,43 @@
 // Programmer name: Chad Farrell
-// Date completed: 2.13.2020
-// Description: This program does math to find the total cost for a yogurt shop.
+// Date completed: 2/18/2020
+// Description: ___________________________
 
 package main
 
-import "fmt" 
+import (
+    "fmt"
+    "math/rand"
+    //"time"
+) //adding the ability to do random numbers
 
 func main() {
-//Creating the variables
-  var Oz, coupon, tax, totalWithout, totalWith, tip, toppings2 float32
-  var toppings int
-  var couponQ int
+    //create a variable for count
+  var count int
+  count = 1 
+    //ask the user to enter a max range for the guessing game and store that value in variable max.
+  fmt.Println("Please enter a max range for the guessing game")
+  var max int
+  fmt.Scanln(&max)
 
-//asking the user for ounces of yogurt
-  fmt.Println("How many ounces?")
-  fmt.Scanln(&Oz)
-  totalWithout = (Oz) * .17
-  
-//getting the toppings prics
-  fmt.Println("how many toppings")
-  fmt.Scanln(&toppings)
-  toppings2 = float32(toppings) * .5
+    //this next line creates a random number from 1 to that guess for the computer to know.  You can test this by printing out the variable computerGuess
+    var computerGuess = rand.Intn(max)
 
-//getting coupon info if any
-  fmt.Println("does the coustomer have a coupon? Enter 1 for yes and 2 for no")
-  fmt.Scanln(&couponQ)
-  if couponQ == 1 {
-    fmt.Println("please enter coupon amount in decimals")
-    fmt.Scanln(&coupon)
-    totalWith = (coupon * totalWithout)
-     }
+    //ask the user to enter a guess for the computer number
+  fmt.Println("please enter your guess")
+  var guess int
+  fmt.Scan(&guess)
+    //create a loop that compares the computerGuess to the userGuess while they are NOT equal go into the loop
+    for computerGuess != guess{
+        //increase the count by 1
+        count++
+        //tell the user that the guessed incorrect
+        fmt.Println("wrong")
+        //ask the user to enter a new guess for the computer number
+        fmt.Println("Please try agian")
+        fmt.Scan(&guess)
+        }
+      
 
-//adding total and topping + the weight of the cup
-  totalWith = totalWith + toppings2 + .00425
-
-//finding the tax  
-  tax = totalWith * .725
-
-//finding the tip amount
-  fmt.Println("Please enter tip amount")
-  fmt.Scanln(&tip)
- 
-//final totals
-totalWith = (totalWith + tax) + tip
-
-fmt.Println("The price of just yogurt is",totalWithout)
-fmt.Println("The total price is", totalWith)
-
-
-
-
-
-
-
+    //print out that the user got the answer correctly and how many guesses it took (the count)
+    fmt.Println("congrats you got it right!", count)
 }
- 
