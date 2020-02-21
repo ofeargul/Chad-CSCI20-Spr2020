@@ -1,43 +1,35 @@
-// Programmer name: Chad Farrell
-// Date completed: 2/18/2020
+// Programmer name: __________
+// Date completed:  __________
 // Description: ___________________________
 
 package main
 
-import (
-    "fmt"
-    "math/rand"
-    //"time"
-) //adding the ability to do random numbers
+import "fmt" 
 
 func main() {
-    //create a variable for count
-  var count int
-  count = 1 
-    //ask the user to enter a max range for the guessing game and store that value in variable max.
-  fmt.Println("Please enter a max range for the guessing game")
-  var max int
-  fmt.Scanln(&max)
+  n := 1234
+  for 0 < n && n > 9{
+    var sum, a, b, c int
+    //dividing 1234 to get the 1 isolated and passing the 234 on
+    a = n / 1000
+    //fmt.Println(a)
+    sum = n % 1000
+    //fmt.Println(sum)
+    //dividing 234 to get the 2 isolated and then passing 34 on
+    b = sum / 100
+    //fmt.Println(b)
+    sum = sum % 100
+    //fmt.Println(sum)
+    //
+    c = sum / 10
+    //fmt.Println(c)
+    sum = sum % 10
+    //fmt.Println(sum)
+    //
+    n = a + b + c + sum
 
-    //this next line creates a random number from 1 to that guess for the computer to know.  You can test this by printing out the variable computerGuess
-    var computerGuess = rand.Intn(max)
+  
 
-    //ask the user to enter a guess for the computer number
-  fmt.Println("please enter your guess")
-  var guess int
-  fmt.Scan(&guess)
-    //create a loop that compares the computerGuess to the userGuess while they are NOT equal go into the loop
-    for computerGuess != guess{
-        //increase the count by 1
-        count++
-        //tell the user that the guessed incorrect
-        fmt.Println("wrong")
-        //ask the user to enter a new guess for the computer number
-        fmt.Println("Please try agian")
-        fmt.Scan(&guess)
-        }
-      
-
-    //print out that the user got the answer correctly and how many guesses it took (the count)
-    fmt.Println("congrats you got it right!", count)
+  }
+ fmt.Println(n)
 }
