@@ -5,20 +5,11 @@
 package main
 
 import "fmt"
-var anwser int
 //Function if correect
-func Pass(){
-  fmt.Println("Correct good job!!")
+func Welcome(){
+  fmt.Println("Hello welcome to the computer!!")
 }
-func Fail(){
-  fmt.Println("Oops wrong!!")
-}
+
 func main() {
-    fmt.Println("Whats 9 + 11 =?")
-    fmt.Scanln(&anwser)
-    if anwser == 21{
-      Pass()
-    }else{
-      Fail()
-    }
+    Welcome()
 }
